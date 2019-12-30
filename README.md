@@ -43,7 +43,7 @@ Things you may want to cover:
 |registration_date|string|
 |address|string|null: false|
 |tell|string|null: false|
-|user_id|references|null: false, foreign_key: true|
+|user_id|references|null: false|
 ### Association
 - belongs_to :user
 - has_many :softwares
@@ -52,8 +52,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |software|string|
-|user_id|references|null: false, foreign_key: true|
-|data_id|references|null: false, foreign_key: true|
+|user_id|references|null: false|
+|data_id|references|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :data
@@ -63,8 +63,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |hard|text|null: false|
-|user_id|references|null: false, foreign_key: true|
-|software_id|references|null: false, foreign_key: true|
+|user_id|references|null: false|
+|software_id|references|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :software
