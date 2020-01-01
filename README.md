@@ -36,7 +36,7 @@ Things you may want to cover:
 - has_many :hards
 - has_many :softwares
 
-## datasテーブル
+## informationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |facility_name|string|null: false|
@@ -56,7 +56,7 @@ Things you may want to cover:
 |data_id|references|null: false|
 ### Association
 - belongs_to :user
-- belongs_to :data
+- belongs_to :information
 - belongs_to :hard
 
 ## hardsテーブル
