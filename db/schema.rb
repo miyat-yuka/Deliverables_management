@@ -10,22 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_31_120943) do
+ActiveRecord::Schema.define(version: 2020_01_12_110028) do
 
-  create_table "information", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "hards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category"
+    t.bigint "user_id"
+    t.bigint "program_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["program_id"], name: "index_hards_on_program_id"
+    t.index ["user_id"], name: "index_hards_on_user_id"
+  end
+
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "facility_name", null: false
+    t.string "postal_code", null: false
     t.string "address", null: false
     t.string "tell", null: false
     t.string "registration_date", null: false
+    t.string "delivery_date", null: false
+    t.string "delivery_note", null: false
+    t.string "estimate_sheet", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "estimate_sheet"
-    t.string "delivery_note"
-    t.string "delivery_date"
-    t.string "postal_code"
-    t.index ["facility_name"], name: "index_information_on_facility_name"
-    t.index ["user_id"], name: "index_information_on_user_id"
+    t.index ["facility_name"], name: "index_posts_on_facility_name"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "thing"
+    t.bigint "user_id"
+    t.bigint "hard_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hard_id"], name: "index_products_on_hard_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "programs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "post_id"
+    t.string "software"
+    t.string "user"
+    t.index ["post_id"], name: "index_programs_on_post_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -42,5 +71,10 @@ ActiveRecord::Schema.define(version: 2019_12_31_120943) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "information", "users"
+  add_foreign_key "hards", "programs"
+  add_foreign_key "hards", "users"
+  add_foreign_key "posts", "users"
+  add_foreign_key "products", "hards"
+  add_foreign_key "products", "users"
+  add_foreign_key "programs", "posts"
 end

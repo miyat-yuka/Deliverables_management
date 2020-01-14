@@ -1,0 +1,65 @@
+.main
+  %span.main-child
+    施設情報・納品情報を登録してください
+  .main-registration__date
+    .main-registration__date-child
+      登録日
+    = form_for @post, url: posts_path do |f|
+      =f.text_field :registration_date, placeholder: "登録日", type: "text", class:"registration__date-input-text"
+
+      .main-facility
+        .main-facility-child
+          施設名
+        =f.text_field :facility_name, placeholder: "施設名", type: "text", class:"facility-input-text"
+
+      .main-postal__code
+        .main-postal__code-child
+          郵便番号
+        =f.text_field :postal_code, placeholder: "郵便番号", type: "text", class:"postal__code-input-text"
+
+      .main-address
+        .main-address-child
+          住所
+        =f.text_field :address, placeholder: "住所", type: "text", class:"address-input-text"
+
+      .main-tell
+        .main-tell-child
+          電話番号
+        =f.text_field :tell, placeholder: "電話番号", type: "text", class:"tell-input-text"
+
+      .main-delivery_date
+        .main-delivery_date-child
+          納品日
+        =f.text_field :delivery_date, placeholder: "納品日", type: "text", class:"delivery_date-input-text"
+
+      .main-delivery_note
+        .main-delivery_note-child
+          納品書
+        = f.file_field :delivery_note, class: "delivery_note-image"
+
+      .main-estimate_sheet
+        .main-estimate_sheet-child
+          見積書
+        = f.file_field :estimate_sheet, class: "estimate_sheet-image"
+
+      .footer
+        %input.post_botton{type:"submit", value: "next"}
+
+      .best
+        %span.best-name
+          納品/ソフトウェアを登録してください
+        .best-software
+          .best-software-child
+            ソフト
+          = f.fields_for :programs do |d|
+            = d.text_field :software, placeholder: "name", type: "text", class:"software-input-text"
+
+            .best-main
+              = d.fields_for :hards, class:"hards-parent" do |m|
+                = m.text_field :category, placeholder: "category", type: "text", class:"hards-input-text"
+            
+                = m.fields_for :products do |s|
+                  = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text"
+              .footer
+                %input.products_back_botton{name: "text", type: "submit", value: "back"}
+                = f.submit "send", class:"products_botton"

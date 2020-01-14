@@ -1,0 +1,22 @@
+.side {
+  height: 100vh;
+  width: 300px;
+  background-color: rgb(221, 217, 213);
+  position: fixed;
+
+  .side-search {
+    margin-top: 100px;
+    margin-left: 130px;
+    font-family: "Courier";
+  }
+  .side-sign_out {
+    margin-top: 50px;
+    margin-left: 100px;
+    font-family: "Courier";
+  }
+  .side-user_edit {
+    margin-top: 50px;
+    margin-left: 100px;
+    font-family: "Courier";
+  }
+}
