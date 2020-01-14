@@ -32,11 +32,12 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 ### Association
-- has_many :datas
+- has_many :posts
+- has_many :programs
 - has_many :hards
-- has_many :softwares
+- has_many :products
 
-## informationsテーブル
+## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |facility_name|string|null: false|
@@ -46,25 +47,36 @@ Things you may want to cover:
 |user_id|references|null: false|
 ### Association
 - belongs_to :user
-- has_many :softwares
+- has_many :programs
 
-## softwaresテーブル
+## programsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|software|string|
+|software_name|string|
 |user_id|references|null: false|
-|data_id|references|null: false|
+|post_id|references|null: false|
 ### Association
 - belongs_to :user
-- belongs_to :information
-- belongs_to :hard
+- belongs_to :post
+- has_many :hards
 
 ## hardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|hard|text|null: false|
+|category|string|null: false|
 |user_id|references|null: false|
 |software_id|references|null: false|
 ### Association
 - belongs_to :user
-- belongs_to :software
+- belongs_to :program
+- has_many :products
+
+## productsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|thing|string|null: false|
+|user_id|references|null: false|
+|hard_id|references|null: false|
+### Association
+- belongs_to :user
+- belongs_to :hard

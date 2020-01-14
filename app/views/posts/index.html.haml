@@ -1,0 +1,26 @@
+.index-main
+  %span.index-main_name
+    登録情報  一覧
+  .index-main_page
+    - @posts,@programs.each do |post|
+      .index-main_page_flame
+        .index-main_page_flame-parent
+          .index-main_page_flame-parent-name
+            施設名：
+            = link_to post.facility_name,post_path(post.id), class:"index-main_text_name"
+          .index-main_page_flame-parent-postal_code
+            郵便番号：
+            = post.postal_code
+          .index-main_page_flame-parent-address
+            住所：
+            = post.address
+          .index-main_page_flame-parent-tell
+            電話番号：
+            = post.tell
+          .index-main_page_flame-parent-delivery_date
+            納品日：
+            = post.delivery_date
+          .index-main_page_flame-parent-software
+            納品ソフトウェア：
+            = post.software
+      .footer
