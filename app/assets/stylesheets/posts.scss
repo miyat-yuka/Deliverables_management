@@ -415,19 +415,21 @@
     
 
     .index-main_page_flame {
-      height: 700px;
+      height: 800px;
       width: 1000px;
       background-color: rgb(250, 234, 206);
       margin: 0 auto;
-      position: relative;
 
+      .index-main_page_flame-details {
+        margin-right: 100px;
+        padding-top: 100px;
+        text-align: right;
+      }
 
       .index-main_page_flame-parent {
         height: 550px;
         width: 800px;
-        position: absolute;
-        top: 80px;
-        right: 100px;
+        margin-left: 100px;
         display: flex;
         justify-content: space-around;
         align-items: flex-start;

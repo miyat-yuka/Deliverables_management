@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def  index
-    @posts = Post.limit(10).includes(:user).order('created_at DESC')
-    @programs = @posts.programs.build.limit(10).includes(:user).order('created_at DESC')
+    @posts = Post.includes(:user).order('created_at DESC')
+    @programs = Program.includes(:user).order('created_at DESC')
   end
 
   def  new
@@ -17,6 +17,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @program = Program.find(params[:id])
   end
 
   def destroy
