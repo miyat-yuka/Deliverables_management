@@ -2,6 +2,6 @@
   .side-search
     = link_to "検索",""
   .side-sign_out
-    = link_to "サインアウト",""
+    = link_to "サインアウト", destroy_user_session_path, method: :delete
   .side-user_edit
     = link_to "ユーザー編集",""
