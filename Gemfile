@@ -68,3 +68,4 @@ gem 'haml-rails'
 
 gem 'nested_form_fields'
 
+gem 'font-awesome-sass'
