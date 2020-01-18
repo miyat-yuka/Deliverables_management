@@ -12,4 +12,13 @@ class Post < ApplicationRecord
   validates :delivery_date, presence: true
   validates :delivery_note, presence: true
   validates :estimate_sheet, presence: true
+
+
+  def self.search(search) #self.でクラスメソッドとしている
+    if search # Controllerから渡されたパラメータが!= nilの場合は、カラムを部分一致検索
+      Post.where(['facility_name LIKE ?', "%#{search}%"])
+    else
+      Post.all #全て表示。
+    end
+  end
 end

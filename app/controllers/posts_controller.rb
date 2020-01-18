@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def  index
     @posts = Post.includes(:user).order('created_at DESC')
     @programs = Program.includes(:user).order('created_at DESC')
+    @posts = Post.search(params[:search])
   end
 
   def  new

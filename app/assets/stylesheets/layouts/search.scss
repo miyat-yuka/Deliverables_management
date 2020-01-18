@@ -1,0 +1,32 @@
+.search-main {
+  height: 120px;
+
+  .search-main_box {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    background-color: rgb(252, 189, 137);
+    position: fixed;
+
+    .search-main_box-text {
+
+      .text_search {
+        height: 50px;
+        width: 700px;
+        margin-left: 550px;
+        margin-top: 30px;
+        font-size: large;
+      }
+    }
+    .search-main_box-button {
+
+      .button_search {
+        height: 50px;
+        width: 80px;
+        margin-left: 50px;
+        margin-top: 30px;
+        font-size: large;
+      }
+    }
+  }
+}
