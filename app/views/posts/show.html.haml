@@ -1,27 +1,29 @@
-.index-main
-  %span.index-main_name
+.show-main
+  %span.show-main_name
     登録情報  一覧
-  .index-main_page
-    .index-main_page_flame
-      .index-main_page_flame-details
-        = link_to ">>戻る",root_path, class:"index-main_text_name"
-      .index-main_page_flame-parent
-        .index-main_page_flame-parent-name
+  .show-main_page
+    .show-main_page_flame
+      .show-main_page_flame-details
+        .show-main_page_flame-details-item
+          = link_to "削除", post_path, method: :delete, class:"show-main_text_destroy"
+          = link_to ">>戻る",root_path, class:"show-main_text_back"
+      .show-main_page_flame-parent
+        .show-main_page_flame-parent-name
           施設名：
           = @post.facility_name
-        .index-main_page_flame-parent-postal_code
+        .show-main_page_flame-parent-postal_code
           郵便番号：
           = @post.postal_code
-        .index-main_page_flame-parent-address
+        .show-main_page_flame-parent-address
           住所：
           = @post.address
-        .index-main_page_flame-parent-tell
+        .show-main_page_flame-parent-tell
           電話番号：
           = @post.tell
-        .index-main_page_flame-parent-delivery_date
+        .show-main_page_flame-parent-delivery_date
           納品日：
           = @post.delivery_date
-        .index-main_page_flame-parent-software
+        .show-main_page_flame-parent-software
           納品ソフトウェア：
           = @program.software
       .footer

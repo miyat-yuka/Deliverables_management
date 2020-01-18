@@ -176,7 +176,7 @@
   margin: 0px;
 }
 
-.top {
+.show-main {
   height: 100vh;
   width: calc(100% - 300px);
   padding-top: 80px;
@@ -185,206 +185,82 @@
   margin-left: 150px;
   padding-left: 150px;
 
-  .top-name {
-    font-size: x-large;
+  .show-main_name {
     font-family: "Courier";
+    font-size: x-large;
     border-bottom: solid 2px orange;
-    }
-
-  .top-registration__date {
-    width: 100%;
-    margin-bottom: 50px;
-    margin-top: 50px;
-
-    .top-registration__date-child {
-      font-family: "Courier";
-    }
-
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(37, 59, 156);
-      margin: 5px auto;
-      padding: 5px;
-
-      .registration__date-text {
-        margin-top: 20px;
-      }
-    }
   }
+  .show-main_page {
+    margin-top: 100px;
+    font-size: x-large;
+    
 
-  .top-facility {
-    width: 100%;
-    margin-bottom: 50px;
+    .show-main_page_flame {
+      height: 850px;
+      width: 1000px;
+      background-color: rgb(250, 234, 206);
+      margin: 0 auto;
 
-    .top-facility-child {
-      font-family: "Courier";
-    }
+      .show-main_page_flame-details {
+        height: 170px;
+        width: 100%;
+        position: relative;
 
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(37, 59, 156);
-      margin: 5px auto;
-      padding: 5px;
+        .show-main_page_flame-details-item {
+          width: 230px;
+          position: absolute;
+          right: 50px;
+          top: 70px;
+          border-bottom: 2px solid rgb(16, 83, 230);
+          
+          .show-main_text_destroy {
+            margin-right: 60px;
+            text-decoration: none;
+          }
 
-      .facility-text {
-        margin-top: 20px;
+          .show-main_text_back {
+            text-decoration: none;
+          }
+        }
+      }
+
+      .show-main_page_flame-parent {
+        height: 550px;
+        width: 800px;
+        margin-left: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-direction: column;
+        font-family: "Courier";
+
+        .show-main_page_flame-parent-name {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .show-main_page_flame-parent-postal_code {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .show-main_page_flame-parent-address {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .show-main_page_flame-parent-tell {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .show-main_page_flame-parent-delivery_date {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .show-main_page_flame-parent-software {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
       }
     }
-  }
-
-  .top-postal__code {
-    width: 100%;
-    margin-bottom: 50px;
-
-    .main-postal__code-child {
-      font-family: "Courier";
-    }
-
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(37, 59, 156);
-      margin: 5px auto;
-      padding: 5px;
-
-      .postal__code-text {
-        margin-top: 20px;
-      }
-    }
-  }
-
-  .top-address {
-    width: 100%;
-    margin-bottom: 50px;
-
-    .top-address-child {
-      font-family: "Courier";
-    }
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(37, 59, 156);
-      margin: 5px auto;
-      padding: 5px;
-
-      .address-text {
-        margin-top: 20px;
-      }
-    }
-  }
-  .top-tell {
-    width: 100%;
-    margin-bottom: 50px;
-
-    .top-tell-child {
-      font-family: "Courier";
-    }
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(37, 59, 156);
-      margin: 5px auto;
-      padding: 5px;
-
-      .tell-text {
-        margin-top: 20px;
-      }
-    }
-  }
-  .top-delivery_date {
-    width: 100%;
-    margin-bottom: 50px;
-
-    .top-delivery_date-child {
-      font-family: "Courier";
-    }
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(156, 37, 87);
-      margin: 5px auto;
-      padding: 5px;
-
-      .delivery_date-text {
-        margin-top: 20px;
-      }
-    }
-  }
-  .top-software {
-    width: 100%;
-    margin-bottom: 50px;
-
-    .top-software-child {
-      font-family: "Courier";
-    }
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(156, 37, 87);
-      margin: 5px auto;
-      padding: 5px;
-
-      .software-text {
-        margin-top: 20px;
-      }
-    }
-  }
-  .top-estimate {
-    width: 100%;
-    margin-bottom: 50px;
-
-    .top-estimate-child {
-      font-family: "Courier";
-    }
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(156, 37, 87);
-      margin: 5px auto;
-      padding: 5px;
-
-      .estinate-text {
-        margin-top: 20px;
-      }
-    }
-  }
-  .top-delivery_note {
-    width: 100%;
-    margin-bottom: 50px;
-
-    .top-delivery_note-child {
-      font-family: "Courier";
-    }
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(156, 37, 87);
-      margin: 5px auto;
-      padding: 5px;
-
-      .delivery_note-text {
-        margin-top: 20px;
-      }
+    .footer {
+      height: 200px;
     }
   }
 }
