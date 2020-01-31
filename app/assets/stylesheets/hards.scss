@@ -2,7 +2,26 @@
 
 .best-main {
   height: 100px;
-  width: 500px;
+
+  .best-main-text {
+    margin-top: 50px;
+  }
+
+  .add_text {
+    margin-right: 25px;
+    margin-top: 50px;
+  }
+
+  .hards-input-text {
+    height: 50px;
+    width: 500px;
+    margin-left: 10px;
+  }
+
+  #pulas-hard {
+    margin-left: 10px;
+    cursor: pointer;
+  }
 }
 
 
@@ -64,7 +83,7 @@
   width: calc(100% - 300px);
   padding-top: 80px;
   text-align: center;
-  overflow: scroll;
+  // overflow: scroll;
   margin-left: 150px;
   padding-left: 150px;
 

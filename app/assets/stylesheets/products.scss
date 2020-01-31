@@ -1,52 +1,41 @@
 // new
 
 .products {
-  height: 100vh;
-  width: calc(100vw - 300px);
   padding-top: 80px;
   text-align: center;
-  overflow: scroll;
   margin: auto 0;
 
-  .products-name {
-  font-size: x-large;
-  font-family: "Courier";
-  border-bottom: solid 2px orange;
+  .products-text {
+
   }
 
-  .products-parent {
-    width: 100%;
-    margin-bottom: 50px;
-    margin-top: 50px;
-
-    .products-child {
-      font-family: "Courier";
-    }
-
-    .products-input-text {
-      height: 50px;
-      width: 500px;
-      font-size: large;
-    }
+  .products-input-text {
+    height: 50px;
+    width: 500px;
   }
+  #pulas-product {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
 
-  .footer {
-    height: calc(100% - 700px);
-    width: 100%;
+.footer {
+  height: calc(100% - 700px);
+  width: 100%;
+  font-size: large;
+
+  // .products_back_botton {
+  //   height: 50px;
+  //   width: 100px;
+  //   font-size: large;
+  //   margin-right: 200px;
+  // }
+
+  .products_button {
+    height: 100px;
+    width: 100px;
     font-size: large;
-
-    .products_back_botton {
-      height: 50px;
-      width: 100px;
-      font-size: large;
-      margin-right: 200px;
-    }
-
-    .products_botton {
-      height: 50px;
-      width: 100px;
-      font-size: large;
-    }
+    margin-top: 50px;
   }
 }
 
@@ -57,7 +46,7 @@
   width: calc(100% - 300px);
   padding-top: 80px;
   text-align: center;
-  overflow: scroll;
+  // overflow: scroll;
   margin-left: 150px;
   padding-left: 150px;
 

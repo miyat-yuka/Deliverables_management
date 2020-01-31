@@ -44,7 +44,6 @@
         = f.file_field :estimate_sheet, class: "estimate_sheet-image"
 
       .footer
-        %input.post_botton{type:"submit", value: "next"}
 
       .best
         %span.best-name
@@ -55,12 +54,20 @@
           = f.fields_for :programs do |d|
             = d.text_field :software, placeholder: "name", type: "text", class:"software-input-text"
 
-            .best-main
-              = d.fields_for :hards, class:"hards-parent" do |m|
-                = m.text_field :category, placeholder: "category", type: "text", class:"hards-input-text"
-            
-                = m.fields_for :products do |s|
-                  = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text"
-              .footer
-                %input.products_back_botton{name: "text", type: "submit", value: "back"}
-                = f.submit "send", class:"products_botton"
+          .best-main
+            .best-main-text
+              ハード
+            = d.fields_for :hards, class:"hards-parent" do |m|
+              = m.text_field :category, placeholder: "category", type: "text", class:"hards-input-text", id: "hard_text"
+              = icon('far', 'plus-square', id: 'pulas-hard')
+              #add
+
+                .products
+                  .products-text
+                    プロダクト
+                  = m.fields_for :products do |s|
+                    = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text"
+                    = icon('far', 'plus-square', id: 'pulas-product')
+
+                .footer
+                  = f.submit "send", class:"products_button"

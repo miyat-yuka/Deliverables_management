@@ -8,6 +8,7 @@
   overflow: scroll;
   margin-left: 150px;
   padding-left: 150px;
+  margin-bottom: 100px;
 
   .main-name {
     font-size: x-large;
@@ -154,7 +155,7 @@
   }
 
   .footer {
-    height: calc(100% - 700px);
+    // height: calc(100% - 700px);
     width: 100%;
     font-size: large;
 
@@ -270,6 +271,84 @@
 
 
 // index
+
+.index-main {
+  height: 100vh;
+  width: calc(100% - 300px);
+  padding-top: 80px;
+  text-align: center;
+  overflow: scroll;
+  margin-left: 150px;
+  padding-left: 150px;
+
+  .index-main_name {
+    font-family: "Courier";
+    font-size: x-large;
+    border-bottom: solid 2px orange;
+  }
+  .index-main_page {
+    margin-top: 100px;
+    font-size: x-large;
+    
+
+    .index-main_page_flame {
+      height: 800px;
+      width: 1000px;
+      background-color: rgb(250, 234, 206);
+      margin: 0 auto;
+
+      .index-main_page_flame-details {
+        margin-right: 100px;
+        padding-top: 100px;
+        text-align: right;
+      }
+
+      .index-main_page_flame-parent {
+        height: 550px;
+        width: 800px;
+        margin-left: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-direction: column;
+        font-family: "Courier";
+
+        .index-main_page_flame-parent-name {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .index-main_page_flame-parent-postal_code {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .index-main_page_flame-parent-address {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .index-main_page_flame-parent-tell {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .index-main_page_flame-parent-delivery_date {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+
+        .index-main_page_flame-parent-software {
+          border-bottom: 2px solid rgb(255, 190, 93);
+        }
+      }
+    }
+    .footer {
+      height: 200px;
+    }
+  }
+}
+
+
+
+
+
+// search
 
 .index-main {
   height: 100vh;

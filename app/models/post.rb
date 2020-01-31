@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true
   has_many :programs, inverse_of: :post, dependent: :destroy
 
-  accepts_nested_attributes_for :programs
+  accepts_nested_attributes_for :programs, allow_destroy: true
 
   validates :facility_name, presence: true
   validates :postal_code, presence: true
