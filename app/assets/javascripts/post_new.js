@@ -22,10 +22,10 @@ $(function(){
 
 
 
-$(document).on("click", "#pulas-hard", function() {
+// $(document).on("click", "#pulas-hard", function() {
 
-  $("#hard_text").clone(true).insertAfter("#hard_text");
-});
+//   $("#hard_text").clone(true).insertAfter("#hard_text");
+// });
 
 
 
