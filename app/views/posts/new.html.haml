@@ -57,17 +57,18 @@
             .best-main
               .best-main-text
                 ハード
-              = d.fields_for :hards, class:"hards-parent" do |m|
-                = m.text_field :category, placeholder: "category", type: "text", class:"hards-input-text", id: "hard_text"
-                = icon('far', 'plus-square', id: 'pulas-hard')
-                #add
+              #best-main-text_box
+                = d.fields_for :hards, class:"hards-parent" do |m|
+                  = m.text_field :category, placeholder: "category", type: "text", class:"hards-input-text", id: "hard-text"
+                  = icon('far', 'plus-square', id: 'pulas-hard')
+                  #add
 
-                .products
-                  .products-text
-                    プロダクト
-                  = m.fields_for :products do |s|
-                    = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text"
-                    = icon('far', 'plus-square', id: 'pulas-product')
+                  .products
+                    .products-text
+                      プロダクト
+                    = m.fields_for :products do |s|
+                      = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text"
+                      = icon('far', 'plus-square', id: 'pulas-product')
 
                     .footer
                       = f.submit "send", class:"products_button"
