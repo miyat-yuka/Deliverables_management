@@ -11,6 +11,9 @@
             = f.label :email
           .field-input
             = f.email_field :email, autofocus: true
+        - if @sns_id.present?
+          = hidden_field_tag :sns_auth, true
+        - else
           .field
             .field-label
               = f.label :password
