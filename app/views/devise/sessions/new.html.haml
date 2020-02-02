@@ -11,6 +11,9 @@
             = f.label :email
           .field-input
             = f.email_field :email, autofocus: true
+        - if @sns_id.present?
+          = hidden_field_tag :sns_auth, true
+        - else
           .field
             .field-label
               = f.label :password
@@ -19,3 +22,6 @@
               = f.password_field :password, autocomplete: "off"
           .actions
             = f.submit "Log in", class: 'btn'
+
+    = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
+    = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post

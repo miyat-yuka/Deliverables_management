@@ -1,4 +1,13 @@
 .account-page {
+
+  .btn-sign_in {
+    color: #fff;
+    background-color: #ccc;
+    font-size: 14px;
+    height: 60px;
+    width: 150px;
+  }
+
   .account-page__inner {
     width: 980px;
     margin: 60px auto;
@@ -48,6 +57,8 @@
       font-size: 14px;
     }
   }
+
+
 
   .field {
     margin-bottom: 10px;
