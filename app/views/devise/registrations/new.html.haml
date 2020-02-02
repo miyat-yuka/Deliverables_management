@@ -31,8 +31,8 @@
                   = f.label :password_confirmation
                 .field-input
                   = f.password_field :password_confirmation, autocomplete: "off"
-              .actions
-                = f.submit "Create Account", class: 'btn'
+        .actions
+          = f.submit "Create Account", class: 'btn-sign_in'
 
     = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post
     = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
