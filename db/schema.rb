@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_18_064624) do
+ActiveRecord::Schema.define(version: 2020_02_02_125915) do
 
   create_table "hards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2020_01_18_064624) do
     t.index ["post_id"], name: "index_programs_on_post_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -83,4 +92,5 @@ ActiveRecord::Schema.define(version: 2020_01_18_064624) do
   add_foreign_key "products", "posts"
   add_foreign_key "products", "users"
   add_foreign_key "programs", "posts"
+  add_foreign_key "sns_credentials", "users"
 end
