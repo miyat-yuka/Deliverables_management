@@ -57,11 +57,12 @@
             .best-main
               .best-main-text
                 ハード
-              #best-main-text_box
                 = d.fields_for :hards, class:"hards-parent" do |m|
-                  = m.text_field :category, placeholder: "category", type: "text", class:"hards-input-text", id: "hard-text"
-                  = icon('far', 'plus-square', id: 'pulas-hard')
-                  #add
+                  #best-main-text_box
+                    = m.text_field :category, placeholder: "category", type: "text", class:"hards-input-text", id: "hard_text"
+                    = icon('far', 'plus-square', id: 'pulas-hard')
+                    = icon('far', 'minus-square', id: 'minus-hard')
+                    #add
 
                   .products
                     .products-text

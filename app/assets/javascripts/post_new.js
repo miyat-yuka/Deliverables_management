@@ -33,49 +33,47 @@
 
 
 
-
 $(function(){
 
   function buildHTML(){
-    let html = `<input placeholder="category" type="text" class="hards-input-text" id="hard-text" name="post[programs_attributes][0][hards_attributes][0][category]">`
+    const index = $('.hards-input-text').length;
+    const index2 = $('.fa-minus-square').length;
+    let html = `<div id="best-main-text_box">
+                  <input placeholder="category" type="text" class="hards-input-text" id="hard_text" name="post[programs_attributes][0][hards_attributes][${index}][category]">
+                  <i id="minus-hard" class="far fa-minus-square"></i>
+                  <div id="add"></div>
+                </div>`
 
     return html;
   }
 
-  $("#pulas-hard").click(function(e){
+  $(".fa-plus-square").click(function(e){
     e.preventDefault();
 
     let html = buildHTML();
-    let type_text = document.getElementById("hard-text").getAttribute("type");
-    // let type_text = $(".add_text").append('<input type="text">');
+    let type_text = document.getElementById("hard_text").getAttribute("type");
 
     $("#add").addClass("add_text");
-    // $(".add_text").append('<input type="text">');
     $(".add_text").append(html);
     $(".add_text").attr(type_text);
+  });
 
+  $(function(e){
+    const index = $('.hards-input-text').length;
+    const index2 = $('.fa-minus-square').length;
+
+    $(".fa-minus-square").click(function(e){
+      
+      // $(".add_text").removeClass("add_text");
+      // if(index > 0 && index2 == index){
+        $("#add").addClass("remove_text");
+      $(".remove_text").remove();
+      // $(this).parent().remove();
+      // };
   });
 });
 
-
-
-
-
-
-
-
-
-// $(document).on("click", "#pulas-hard", function() {
-
-//   $("#hard_text").clone(true).insertAfter("#hard_text");
-// });
-
-
-
-
-// $(document).on("click", ".del", function() {
-//   var target = $(this).parent();
-//   if (target.parent().children().length > 1) {
-//       target.remove();
-  // }
-// });
+  // $('.add_text').on('click', '#minus-hard', function() {
+  //   $(this).parent().remove();
+  // });
+});
