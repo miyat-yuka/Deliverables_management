@@ -52,7 +52,11 @@
           .best-software-child
             ソフト
           = f.fields_for :programs do |d|
-            = d.text_field :software, placeholder: "name", type: "text", class:"software-input-text"
+            #best-software-child_box
+              = d.text_field :software, placeholder: "name", type: "text", class:"program-input-text", id: "program_text"
+              = icon('far', 'plus-square', id: 'pulas-program')
+              = icon('far', 'minus-square', id: 'minus-program')
+              #add_program
 
             .best-main
               .best-main-text
@@ -62,14 +66,18 @@
                     = m.text_field :category, placeholder: "category", type: "text", class:"hards-input-text", id: "hard_text"
                     = icon('far', 'plus-square', id: 'pulas-hard')
                     = icon('far', 'minus-square', id: 'minus-hard', class: "minus_hard[0]")
-                    #add
+                    -# #add_hard
 
-                  .products
-                    .products-text
-                      プロダクト
-                    = m.fields_for :products do |s|
-                      = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text"
-                      = icon('far', 'plus-square', id: 'pulas-product')
+                    .products
+                      .products-text
+                        プロダクト
+                      #products-text_box
+                        = m.fields_for :products do |s|
+                          = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text", id: "product_text"
+                          = icon('far', 'plus-square', id: 'pulas-product')
+                          = icon('far', 'minus-square', id: 'minus-product')
+                          #add_product
+                          #add_hard
 
                     .footer
                       = f.submit "send", class:"products_button"
