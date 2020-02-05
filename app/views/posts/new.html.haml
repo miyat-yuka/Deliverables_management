@@ -58,7 +58,23 @@
               = icon('far', 'minus-square', id: 'minus-program')
               #add_program
 
-            -# .best-main
+            .products
+              .products-text
+                プロダクト
+              #products-text_box
+                = d.fields_for :products do |s|
+                  = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text", id: "product_text"
+                  = s.text_field :model_number, placeholder: "model_number", type: "text", class:"model_number-input-text", id: "model_number_text"
+                  = s.collection_select :category_id, Category.all, :id, :name
+                  = icon('far', 'plus-square', id: 'pulas-product')
+                  = icon('far', 'minus-square', id: 'minus-product')
+                  #add_product
+
+            .footer
+              = f.submit "send", class:"products_button"
+
+
+              -# .best-main
             -#   .best-main-text
             -#     ハード
             -#     = d.fields_for :hards, class:"hards-parent" do |m|
@@ -67,18 +83,3 @@
             -#         = icon('far', 'plus-square', id: 'pulas-hard')
             -#         = icon('far', 'minus-square', id: 'minus-hard', class: "minus_hard[0]")
                     -# #add_hard
-
-            .products
-              .products-text
-                プロダクト
-              #products-text_box
-                = d.fields_for :products do |s|
-                  = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text", id: "product_text"
-                  = s.text_field :model_number, placeholder: "model_number", type: "text", class:"model_number-input-text", id: "model_number_text"
-                  = s.collection_select :category_id, Category.all, :id, :nam
-                  = icon('far', 'plus-square', id: 'pulas-product')
-                  = icon('far', 'minus-square', id: 'minus-product')
-                  #add_product
-
-            .footer
-              = f.submit "send", class:"products_button"
