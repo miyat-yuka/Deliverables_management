@@ -54,6 +54,27 @@
       }
     }
 
+    .main-kana {
+      width: 100%;
+      margin-bottom: 50px;
+      margin-top: 50px;
+
+      #collection_box {
+        height: 50px;
+        width: 100px;
+      }
+  
+      .main-kana-child {
+        font-family: "Courier";
+      }
+  
+      .kana-input-text {
+        height: 50px;
+        width: 500px;
+        font-size: large;
+      }
+    }
+
     .main-postal__code {
       width: 100%;
       margin-bottom: 50px;
@@ -150,17 +171,6 @@
       width: 500px;
       margin-left: 200px;
       margin-top: 50px;
-      font-size: large;
-    }
-  }
-
-  .footer {
-    width: 100%;
-    font-size: large;
-
-    .post_botton {
-      height: 30px;
-      width: 100px;
       font-size: large;
     }
   }
