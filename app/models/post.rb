@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user, optional: true
   has_many :programs, inverse_of: :post, dependent: :destroy
+  has_one :dealer
+  
 
   accepts_nested_attributes_for :programs, allow_destroy: true
 
