@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
-  root 'posts#new'
+  root 'posts#index'
   get '/posts/:id', to: 'posts#show'
   get 'search', to: 'posts#search'
 

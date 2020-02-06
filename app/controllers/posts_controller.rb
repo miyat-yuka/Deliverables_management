@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def  index
     @posts = Post.includes(:user).order('created_at DESC')
-    @programs = Program.includes(:user).order('created_at DESC')
   end
 
   def search
@@ -24,7 +23,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @program = Program.find(params[:id])
   end
 
   def destroy

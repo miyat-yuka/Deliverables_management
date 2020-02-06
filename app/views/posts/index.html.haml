@@ -4,7 +4,7 @@
   %span.index-main_name
     登録情報  一覧
   .index-main_page
-    - @posts.zip(@programs).each do |post, program|
+    - @posts.each do |post|
       .index-main_page_flame
         .index-main_page_flame-details
           = link_to ">>詳細",post_path(post.id), class:"index-main_text_name"
@@ -25,6 +25,8 @@
             納品日：
             = post.delivery_date
           .index-main_page_flame-parent-software
-            納品ソフトウェア：
-            -# = program.software
+            - post.programs.each do |program|
+              .index-main_page_flame-parent-software_text
+                = ( "納品ソフトウェア：  " + program.software )
+
       .footer

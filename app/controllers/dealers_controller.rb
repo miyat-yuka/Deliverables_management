@@ -8,7 +8,8 @@ class DealersController < ApplicationController
   def create
     @dealer = Dealer.new(dealer_params)
     @post = @dealer.post
-    @dealer.save!
+    @dealer.save
+    redirect_to root_path
   end
 
   private
