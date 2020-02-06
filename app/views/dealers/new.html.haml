@@ -1,13 +1,22 @@
+= render 'partial/sidebar'
 .top
   %span.top-name
     ディーラーを登録してください
   .top-dealer
     .top-dealer-child
-      ソフト
     = form_for @dealer, url: post_dealers_path do |f|
-      #top-dealer-child_box
-        = f.collection_select :company_id, Company.all, :id, :name
-        = f.text_field :name, placeholder: "名前", type: "text", class:"dealer-input-text", id: "dealer_text"
-        = f.text_field :kananame, placeholder: "カナ", type: "text", class:"dealer_kana-input-text", id: "dealer_kana_text"
+      .top-dealer-child_box
+        .top-dealer-child_box-company_text
+          会社名
+          .top-dealer-child_box-company
+            = f.collection_select :company_id, Company.all, :id, :name
+        .top-dealer-child_box-name_text
+          名前
+          .top-dealer-child_box-name
+            = f.text_field :name, placeholder: "名前", type: "text", class:"dealer-input-text", id: "dealer_text"
+        .top-dealer-child_box-kana_text
+          名前（カナ）
+          .top-dealer-child_box-kana
+            = f.text_field :kananame, placeholder: "カナ", type: "text", class:"dealer_kana-input-text", id: "dealer_kana_text"
 
         = f.submit "send", class:"dealer_button"

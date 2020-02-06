@@ -1,3 +1,71 @@
-// Place all the styles related to the dealers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.top {
+  width: calc(100vw - 300px);
+  padding-top: 80px;
+  text-align: center;
+  margin-left: 150px;
+  padding-left: 150px;
+  margin-bottom: 100px;
+
+  .top-name {
+    font-family: "Courier";
+    font-size: x-large;
+    font-family: "Courier";
+    border-bottom: solid 2px orange;
+  }
+  .top-dealer {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+    .top-dealer-child {
+      font-family: "Courier";
+    }
+    form {
+
+      .top-dealer-child_box {
+
+        .top-dealer-child_box-company_text {
+          font-family: "Courier";
+
+          .top-dealer-child_box-company {
+
+            select {
+              height: 50px;
+              width: 100px;
+            }
+          }
+        }
+        .top-dealer-child_box-name_text {
+          font-family: "Courier";
+          margin-top: 50px;
+
+          .top-dealer-child_box-name {
+
+            .dealer-input-text {
+              height: 50px;
+              width: 500px;
+            }
+          }
+        }
+        .top-dealer-child_box-kana_text {
+          font-family: "Courier";
+          margin-top: 50px;
+
+          .top-dealer-child_box-kana {
+
+            .dealer_kana-input-text {
+              height: 50px;
+              width: 500px;
+            }
+          }
+        }
+      }
+      
+      .dealer_button {
+        height: 50px;
+        width: 100px;
+        margin-top: 100px;
+      }
+    }
+  }
+}
