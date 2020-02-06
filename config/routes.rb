@@ -10,10 +10,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :edit, :update]
   resources :posts, only: [:index, :create, :new, :edit, :update, :destroy]do
+  resources :dealers, only: [:index, :create, :new]
+    # member do
+    #   get "new", to: "dealer#new"
+    #   post "create", to: "dealer#create"
+    # end
     resources :programs, only: [:index, :create, :new, :show]do
-      resources :hards, only: [:index, :create, :new, :show]do
-        resources :products, only: [:index, :create, :new, :show]
-      end
+      resources :products, only: [:index, :create, :new, :show]
     end
   end
 end
