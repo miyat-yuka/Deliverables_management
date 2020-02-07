@@ -78,3 +78,5 @@ gem "omniauth-rails_csrf_protection"
 
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'kaminari'
