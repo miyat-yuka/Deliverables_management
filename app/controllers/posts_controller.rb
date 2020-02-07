@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.save!
     # @post = Post.find(params[:post_id])
-    redirect_to new_post_dealer_path(@post.id)
+    redirect_to root_path
   end
 
   def show
