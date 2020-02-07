@@ -4,18 +4,58 @@
   padding-top: 80px;
   text-align: center;
   margin: auto 0;
+  width: 100%;
 
-  .products-text {
+  .products-text_box {
+    display: flex;
+    flex-wrap:wrap;
 
-  }
+    .products-text_box-category_text {
+      margin-left: 200px;
+      font-family: "Courier";
 
-  .products-input-text {
-    height: 50px;
-    width: 500px;
-  }
-  #pulas-product {
-    margin-left: 10px;
-    cursor: pointer;
+      .products-text_box-category {
+
+        select {
+          height: 50px;
+          width: 100px;
+        }
+      }
+    }
+
+    .products-text_box-product_text {
+      margin-left: 10px;
+      font-family: "Courier";
+
+      .products-text_box-product {
+        .products-input-text {
+          height: 50px;
+          width: 500px;
+        }
+      }
+    }
+
+    .products-text_box-product_text {
+      margin-left: 20px;
+      font-family: "Courier";
+
+      .products-text_box-model_number {
+        .model_number-input-text {
+          height: 50px;
+          width: 500px;
+        }
+      }
+    }
+    #pulas-product {
+      margin-left: 20px;
+      margin-top: 40px;
+      cursor: pointer;
+    }
+    #minus-product {
+      margin-left: 20px;
+      margin-top: 40px;
+      cursor: pointer;
+    }
   }
 }
 

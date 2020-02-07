@@ -54,6 +54,27 @@
       }
     }
 
+    .main-kana {
+      width: 100%;
+      margin-bottom: 50px;
+      margin-top: 50px;
+
+      #collection_box {
+        height: 50px;
+        width: 100px;
+      }
+  
+      .main-kana-child {
+        font-family: "Courier";
+      }
+  
+      .kana-input-text {
+        height: 50px;
+        width: 500px;
+        font-size: large;
+      }
+    }
+
     .main-postal__code {
       width: 100%;
       margin-bottom: 50px;
@@ -153,17 +174,6 @@
       font-size: large;
     }
   }
-
-  .footer {
-    width: 100%;
-    font-size: large;
-
-    .post_botton {
-      height: 30px;
-      width: 100px;
-      font-size: large;
-    }
-  }
 }
 
 
@@ -196,13 +206,13 @@
     
 
     .show-main_page_flame {
-      height: 850px;
+      // height: 1000px;
       width: 1000px;
       background-color: rgb(250, 234, 206);
       margin: 0 auto;
 
       .show-main_page_flame-details {
-        height: 170px;
+        height: 100px;
         width: 100%;
         position: relative;
 
@@ -225,9 +235,10 @@
       }
 
       .show-main_page_flame-parent {
-        height: 550px;
+        // height: 550px;
         width: 800px;
         margin-left: 100px;
+        padding-bottom: 100px;
         display: flex;
         justify-content: space-around;
         align-items: flex-start;
@@ -236,26 +247,87 @@
 
         .show-main_page_flame-parent-name {
           border-bottom: 2px solid rgb(255, 190, 93);
+          margin-bottom: 30px;
+        }
+
+        .show-main_page_flame-parent-kananame {
+          border-bottom: 2px solid rgb(255, 190, 93);
+          margin-bottom: 30px;
         }
 
         .show-main_page_flame-parent-postal_code {
           border-bottom: 2px solid rgb(255, 190, 93);
+          margin-bottom: 30px;
         }
 
         .show-main_page_flame-parent-address {
           border-bottom: 2px solid rgb(255, 190, 93);
+          margin-bottom: 30px;
         }
 
         .show-main_page_flame-parent-tell {
           border-bottom: 2px solid rgb(255, 190, 93);
+          margin-bottom: 30px;
         }
 
         .show-main_page_flame-parent-delivery_date {
           border-bottom: 2px solid rgb(255, 190, 93);
+          margin-bottom: 100px;
         }
 
-        .show-main_page_flame-parent-software {
-          border-bottom: 2px solid rgb(255, 190, 93);
+        .show-main_page_flame-parent-box {
+
+          .show-main_page_flame-parent-software {
+            border-bottom: 2px solid rgb(255, 190, 93);
+            margin-bottom: 30px;
+            text-align: left;
+          }
+          .show-main_page_flame-parent-dealer {
+            text-align: left;
+            margin-bottom: 50px;
+
+            .show-main_page_flame-parent-dealer_box {
+              background-color: rgb(243, 207, 146);
+
+              .show-main_page_flame-parent-dealer_company {
+                padding: 20px;
+              }
+              .show-main_page_flame-parent-dealer_name {
+                padding: 20px;
+              }
+              .show-main_page_flame-parent-dealer_kananame {
+                padding: 20px;
+              }
+            }
+          }
+          .show-main_page_flame-parent-software-product_box {
+            text-align: left;
+            margin-bottom: 100px;
+
+            .show-main_page_flame-parent-software-product_box_child {
+              background-color: rgb(243, 207, 146);
+
+              .show-main_page_flame-parent-software-product_category {
+                padding: 20px;
+              }
+              .show-main_page_flame-parent-software-product_thing {
+                padding: 20px;
+              }
+              .show-main_page_flame-parent-software-product_model_number {
+                padding: 20px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+        .show-main_page_flame-parent-estimate_sheet {
+          margin-bottom: 100px;
+          img {
+            // height: 300px;
+          }
+        }
+        .show-main_page_flame-parent-delivery_note {
+          margin-bottom: 100px;
         }
       }
     }
