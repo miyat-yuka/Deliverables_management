@@ -25,3 +25,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+public/uploads/post/estimate_sheet/81/images.png
+*.jpeg
+public/uploads/post/delivery_note/63/freemarket_クレジットカード登録.png
+public/uploads/post/delivery_note/64/freemarket_クレジットカード登録.png
+*.png
+*.jpg
