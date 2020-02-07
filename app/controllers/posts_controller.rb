@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def  index
     @posts = Post.includes(:user).order('created_at DESC')
-    @programs = Program.includes(:user).order('created_at DESC')
   end
 
   def search
@@ -10,19 +9,21 @@ class PostsController < ApplicationController
 
   def  new
     @post = Post.new
+    dealers = @post.build_dealer
     programs = @post.programs.build
-    hards = programs.hards.build
-    products = hards.products.build
+    products = programs.products.build
   end
 
   def  create
     @post = Post.new(post_params)
-    @post.save
+    @post.save!
+    # @post = Post.find(params[:post_id])
+    redirect_to new_post_dealer_path(@post.id)
   end
 
   def show
     @post = Post.find(params[:id])
-    @program = Program.find(params[:id])
+    # @dealer = Dealer.find(@post.post_id)
   end
 
   def destroy
@@ -34,6 +35,6 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:facility_name, :address, :tell, :registration_date, :estimate_sheet, :delivery_date, :delivery_note, :postal_code, :user_id, programs_attributes:[:software, :user, :post_id, hards_attributes:[:category, :program_id, :_destroy, products_attributes:[:thing, :user_id, :hard_id]]]).merge(user_id: current_user.id)
+      params.require(:post).permit(:facility_name, :address, :tell, :registration_date, :estimate_sheet, :delivery_date, :delivery_note, :postal_code, :kananame, :user_id, dealer_attributes:[:name, :kananame, :company_id, :post_id], programs_attributes:[:software, :user, :post_id,  products_attributes:[:thing, :category_id, :model_number, :program_id, :_destroy, :id]]).merge(user_id: current_user.id)
     end
 end

@@ -1,8 +1,12 @@
 class Post < ApplicationRecord
   belongs_to :user, optional: true
   has_many :programs, inverse_of: :post, dependent: :destroy
+  has_one :dealer
+  mount_uploader :estimate_sheet, EstimateSheetUploader
+  mount_uploader :delivery_note, DeliveryNoteUploader
 
   accepts_nested_attributes_for :programs, allow_destroy: true
+  accepts_nested_attributes_for :dealer, allow_destroy: true
 
   validates :facility_name, presence: true
   validates :postal_code, presence: true

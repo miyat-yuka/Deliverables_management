@@ -1,7 +1,7 @@
 = render 'partial/sidebar'
 .main
   %span.main-child
-    施設情報・納品情報を登録してください
+    施設情報を登録してください
   .main-registration__date
     .main-registration__date-child
       登録日
@@ -12,6 +12,11 @@
         .main-facility-child
           施設名
         =f.text_field :facility_name, placeholder: "施設名", type: "text", class:"facility-input-text"
+
+      .main-kana
+        .main-kana-child
+          施設名（カナ）
+        =f.text_field :kananame, placeholder: "カナ", type: "text", class:"kana-input-text"
 
       .main-postal__code
         .main-postal__code-child
@@ -43,22 +48,60 @@
           見積書
         = f.file_field :estimate_sheet, class: "estimate_sheet-image"
 
-      .footer
+      .top
+        %span.top-name
+          ディーラーを登録してください
+        .top-dealer
+          .top-dealer-child
+          = f.fields_for :dealer do |k|
+            .top-dealer-child_box
+              .top-dealer-child_box-company_text
+                会社名
+                .top-dealer-child_box-company
+                  = k.collection_select :company_id, Company.all, :id, :name
+              .top-dealer-child_box-name_text
+                名前
+                .top-dealer-child_box-name
+                  = k.text_field :name, placeholder: "名前", type: "text", class:"dealer-input-text", id: "dealer_text"
+              .top-dealer-child_box-kana_text
+                名前（カナ）
+                .top-dealer-child_box-kana
+                  = k.text_field :kananame, placeholder: "カナ", type: "text", class:"dealer_kana-input-text", id: "dealer_kana_text"
 
       .best
         %span.best-name
-          納品/ソフトウェアを登録してください
+          納品内容を登録してください
         .best-software
           .best-software-child
-            ソフト
+            ソフトウェア
           = f.fields_for :programs do |d|
             #best-software-child_box
               = d.text_field :software, placeholder: "name", type: "text", class:"program-input-text", id: "program_text"
-              = icon('far', 'plus-square', id: 'pulas-program')
-              = icon('far', 'minus-square', id: 'minus-program')
-              #add_program
 
-            -# .best-main
+            .products
+              .products-text_box
+                = d.fields_for :products do |s|
+                  .products-text_box-category_text
+                    カテゴリー
+                    .products-text_box-category
+                      = s.collection_select :category_id, Category.all, :id, :name
+                  .products-text_box-product_text
+                    ハードウェア
+                    .products-text_box-product
+                      = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text", id: "product_text"
+                  .products-text_box-product_text
+                    型番
+                    .products-text_box-model_number
+                      = s.text_field :model_number, placeholder: "model_number", type: "text", class:"model_number-input-text", id: "model_number_text"
+                  = icon('far', 'plus-square', id: 'pulas-product')
+                  -# = icon('far', 'minus-square', id: 'minus-product')
+                  #add_product
+
+            .footer
+              = f.submit "送信", class:"products_button"
+
+
+              -# .best-main
             -#   .best-main-text
             -#     ハード
             -#     = d.fields_for :hards, class:"hards-parent" do |m|
@@ -67,18 +110,3 @@
             -#         = icon('far', 'plus-square', id: 'pulas-hard')
             -#         = icon('far', 'minus-square', id: 'minus-hard', class: "minus_hard[0]")
                     -# #add_hard
-
-            .products
-              .products-text
-                プロダクト
-              #products-text_box
-                = d.fields_for :products do |s|
-                  = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text", id: "product_text"
-                  = s.text_field :model_number, placeholder: "model_number", type: "text", class:"model_number-input-text", id: "model_number_text"
-                  = s.collection_select :category_id, Category.all, :id, :nam
-                  = icon('far', 'plus-square', id: 'pulas-product')
-                  = icon('far', 'minus-square', id: 'minus-product')
-                  #add_product
-
-            .footer
-              = f.submit "send", class:"products_button"

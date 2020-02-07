@@ -12,6 +12,9 @@
         .show-main_page_flame-parent-name
           施設名：
           = @post.facility_name
+        .show-main_page_flame-parent-kananame
+          施設名（カナ）：
+          = @post.kananame
         .show-main_page_flame-parent-postal_code
           郵便番号：
           = @post.postal_code
@@ -24,7 +27,40 @@
         .show-main_page_flame-parent-delivery_date
           納品日：
           = @post.delivery_date
-        .show-main_page_flame-parent-software
-          納品ソフトウェア：
-          = @program.software
-      .footer
+        .show-main_page_flame-parent-box
+          - @post.programs.each do |program|
+            .show-main_page_flame-parent-software
+              納品ソフトウェア：
+              = program.software
+            .show-main_page_flame-parent-dealer
+              ◯担当ディーラー
+              .show-main_page_flame-parent-dealer_box
+                .show-main_page_flame-parent-dealer_company
+                  会社名：
+                  = @post.dealer.company.name
+                .show-main_page_flame-parent-dealer_name
+                  担当者：
+                  = @post.dealer.name
+                .show-main_page_flame-parent-dealer_kananame
+                  担当者（カナ）：
+                  = @post.dealer.kananame
+            .show-main_page_flame-parent-software-product_box
+              ◯納品物 一覧
+              - program.products.each do |product|
+                .show-main_page_flame-parent-software-product_box_child
+                  .show-main_page_flame-parent-software-product_category
+                    カテゴリー：
+                    = product.category.name
+                  .show-main_page_flame-parent-software-product_thing
+                    ハードウェア：
+                    = product.thing
+                  .show-main_page_flame-parent-software-product_model_number
+                    型番：
+                    = product.model_number
+        .show-main_page_flame-parent-estimate_sheet
+          見積書：
+          = image_tag "#{@post.estimate_sheet}"
+        .show-main_page_flame-parent-delivery_note
+          納品書：
+          = image_tag "#{@post.delivery_note}"
+    .footer
