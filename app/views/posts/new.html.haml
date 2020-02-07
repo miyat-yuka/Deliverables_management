@@ -48,6 +48,26 @@
           見積書
         = f.file_field :estimate_sheet, class: "estimate_sheet-image"
 
+      .top
+        %span.top-name
+          ディーラーを登録してください
+        .top-dealer
+          .top-dealer-child
+          = f.fields_for :dealer do |k|
+            .top-dealer-child_box
+              .top-dealer-child_box-company_text
+                会社名
+                .top-dealer-child_box-company
+                  = k.collection_select :company_id, Company.all, :id, :name
+              .top-dealer-child_box-name_text
+                名前
+                .top-dealer-child_box-name
+                  = k.text_field :name, placeholder: "名前", type: "text", class:"dealer-input-text", id: "dealer_text"
+              .top-dealer-child_box-kana_text
+                名前（カナ）
+                .top-dealer-child_box-kana
+                  = k.text_field :kananame, placeholder: "カナ", type: "text", class:"dealer_kana-input-text", id: "dealer_kana_text"
+
       .best
         %span.best-name
           納品内容を登録してください
