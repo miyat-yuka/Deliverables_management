@@ -17,7 +17,6 @@ class PostsController < ApplicationController
   def  create
     @post = Post.new(post_params)
     @post.save!
-    # @post = Post.find(params[:post_id])
     redirect_to root_path
   end
 
@@ -32,9 +31,19 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to root_path
+  end
+
   private
 
     def post_params
-      params.require(:post).permit(:facility_name, :address, :tell, :registration_date, :estimate_sheet, :delivery_date, :delivery_note, :postal_code, :kananame, :user_id, dealer_attributes:[:name, :kananame, :company_id, :post_id], programs_attributes:[:software, :user, :post_id,  products_attributes:[:thing, :category_id, :model_number, :program_id, :_destroy, :id]]).merge(user_id: current_user.id)
+      params.require(:post).permit(:facility_name, :address, :tell, :registration_date, :estimate_sheet, :delivery_date, :delivery_note, :postal_code, :kananame, :user_id, dealer_attributes:[:name, :kananame, :company_id, :post_id, :_destroy, :id], programs_attributes:[:software, :user, :post_id, :_destroy, :id,  products_attributes:[:thing, :category_id, :model_number, :program_id, :_destroy, :id]]).merge(user_id: current_user.id)
     end
 end
