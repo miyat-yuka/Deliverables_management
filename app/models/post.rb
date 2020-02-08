@@ -17,12 +17,28 @@ class Post < ApplicationRecord
   validates :delivery_note, presence: true
   validates :estimate_sheet, presence: true
 
+  def self.search(search)
+    if search && search != ""
+      words = search.to_s.split("　")
 
-  def self.search(search) #self.でクラスメソッドとしている
-    if search # Controllerから渡されたパラメータが!= nilの場合は、カラムを部分一致検索
-      Post.where(['facility_name LIKE ?', "%#{search}%"])
+      columns = ["facility_name", "kananame", "address"]
+      query = []
+      result = []
+
+      columns.each do |column|
+        query << ["#{column} LIKE ?"]
+      end
+
+      words.each_with_index do |w, index|
+        if index == 0
+          result[index] = Post.where([query.join(" OR "), "%#{w}%", "%#{w}%", "%#{w}%"])
+        else
+          result[index] = result[index-1].where([query.join(" OR "), "%#{w}%", "%#{w}%", "%#{w}%"])
+        end
+      end
+      return result[words.length-1]
     else
-      Post.all #全て表示。
+      Post.all
     end
   end
 end

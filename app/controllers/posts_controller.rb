@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:search])
-    # @post = Post.find(params[:post_id])
   end
 
   def  new
@@ -18,7 +17,6 @@ class PostsController < ApplicationController
   def  create
     @post = Post.new(post_params)
     @post.save!
-    # @post = Post.find(params[:post_id])
     redirect_to root_path
   end
 

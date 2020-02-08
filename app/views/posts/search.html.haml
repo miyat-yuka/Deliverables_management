@@ -2,7 +2,7 @@
 = render 'partial/sidebar'
 .index-main
   %span.index-main_name
-    検索結果
+    検索結果  一覧
   .index-main_page
     - @posts.each do |post|
       .index-main_page_flame
@@ -12,6 +12,9 @@
           .index-main_page_flame-parent-name
             施設名：
             = post.facility_name
+          .index-main_page_flame-parent-name
+            施設名（カナ）
+            = post.kananame
           .index-main_page_flame-parent-postal_code
             郵便番号：
             = post.postal_code
@@ -25,6 +28,8 @@
             納品日：
             = post.delivery_date
           .index-main_page_flame-parent-software
-            納品ソフトウェア：
-            -# = program.software
+            - post.programs.each do |program|
+              .index-main_page_flame-parent-software_text
+                = ( "納品ソフトウェア：  " + program.software )
+
       .footer
