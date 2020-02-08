@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: Deliverables_management_production
-  username: Deliverables_management
-  password: <%= ENV['DELIVERABLES_MANAGEMENT_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
