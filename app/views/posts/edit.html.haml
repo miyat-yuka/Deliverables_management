@@ -1,0 +1,103 @@
+= render 'partial/sidebar'
+.main
+  %span.main-child
+    施設情報を登録してください
+  .main-registration__date
+    .main-registration__date-child
+      登録日
+    = form_for @post, url: post_path do |f|
+      =f.text_field :registration_date, placeholder: "登録日", type: "text", class:"registration__date-input-text"
+
+      .main-facility
+        .main-facility-child
+          施設名
+        =f.text_field :facility_name, placeholder: "施設名", type: "text", class:"facility-input-text"
+
+      .main-kana
+        .main-kana-child
+          施設名（カナ）
+        =f.text_field :kananame, placeholder: "カナ", type: "text", class:"kana-input-text"
+
+      .main-postal__code
+        .main-postal__code-child
+          郵便番号
+        =f.text_field :postal_code, placeholder: "郵便番号", type: "text", class:"postal__code-input-text"
+
+      .main-address
+        .main-address-child
+          住所
+        =f.text_field :address, placeholder: "住所", type: "text", class:"address-input-text"
+
+      .main-tell
+        .main-tell-child
+          電話番号
+        =f.text_field :tell, placeholder: "電話番号", type: "text", class:"tell-input-text"
+
+      .main-delivery_date
+        .main-delivery_date-child
+          納品日
+        =f.text_field :delivery_date, placeholder: "納品日", type: "text", class:"delivery_date-input-text"
+
+      .main-delivery_note
+        .main-delivery_note-child
+          納品書
+        = image_tag "#{@post.delivery_note}"
+        = f.file_field :delivery_note, class: "delivery_note-image"
+
+      .main-estimate_sheet
+        .main-estimate_sheet-child
+          見積書
+        = image_tag "#{@post.estimate_sheet}"
+        = f.file_field :estimate_sheet, class: "estimate_sheet-image"
+
+      .top
+        %span.top-name
+          ディーラーを登録してください
+        .top-dealer
+          .top-dealer-child
+          = f.fields_for :dealer do |k|
+            .top-dealer-child_box
+              .top-dealer-child_box-company_text
+                会社名
+                .top-dealer-child_box-company
+                  = k.collection_select :company_id, Company.all, :id, :name
+              .top-dealer-child_box-name_text
+                名前
+                .top-dealer-child_box-name
+                  = k.text_field :name, placeholder: "名前", type: "text", class:"dealer-input-text", id: "dealer_text"
+              .top-dealer-child_box-kana_text
+                名前（カナ）
+                .top-dealer-child_box-kana
+                  = k.text_field :kananame, placeholder: "カナ", type: "text", class:"dealer_kana-input-text", id: "dealer_kana_text"
+
+      .best
+        %span.best-name
+          納品内容を登録してください
+        .best-software
+          .best-software-child
+            ソフトウェア
+          = f.fields_for :programs do |d|
+            #best-software-child_box
+              = d.text_field :software, placeholder: "name", type: "text", class:"program-input-text", id: "program_text"
+
+            .products
+              .products-text_box
+                = d.fields_for :products do |s|
+                  .products-text_box-category_text
+                    カテゴリー
+                    .products-text_box-category
+                      = s.collection_select :category_id, Category.all, :id, :name
+                  .products-text_box-product_text
+                    ハードウェア
+                    .products-text_box-product
+                      = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text", id: "product_text"
+                  .products-text_box-product_text
+                    型番
+                    .products-text_box-model_number
+                      = s.text_field :model_number, placeholder: "model_number", type: "text", class:"model_number-input-text", id: "model_number_text"
+                  = icon('far', 'plus-square', id: 'pulas-product')
+                  -# = icon('far', 'minus-square', id: 'minus-product')
+                  #add_product
+
+            .footer
+              = f.submit "更新", class:"products_button"
