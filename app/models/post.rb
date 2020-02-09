@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user, optional: true
   has_many :programs, inverse_of: :post, dependent: :destroy
-  has_one :dealer
+  has_one :dealer, dependent: :destroy
   mount_uploader :estimate_sheet, EstimateSheetUploader
   mount_uploader :delivery_note, DeliveryNoteUploader
 
