@@ -61,3 +61,8 @@ server '18.176.176.199', user: 'ec2-user', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+server '18.176.176.199', user: 'ec2-user', roles: %w{app db web}
+
+# 本番環境のみで実行するための記述
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
