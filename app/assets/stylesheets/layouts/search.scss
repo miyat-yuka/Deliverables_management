@@ -10,13 +10,10 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    // background-color: green;
-    // position: fixed;
 
     .search-main-link_box {
       display: flex;
       justify-content: space-between;
-      // background-color: pink;
       width: 400px;
       font-family: "Courier";
 
@@ -74,7 +71,6 @@
 
 
       .search-main_box-text {
-        // background-color: blue;
 
         .text_search {
           height: 50px;
@@ -87,7 +83,6 @@
         }
       }
       .search-main_box-button {
-        // background-color: yellow;
 
         .button_search {
           -webkit-appearance: none;

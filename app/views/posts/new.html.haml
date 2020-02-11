@@ -88,11 +88,15 @@
                   .products-text_box-product_text
                     ハードウェア
                     .products-text_box-product
-                      = s.text_field :thing, placeholder: "products", type: "text", class:"products-input-text", id: "product_text"
+                      = s.text_field :thing, placeholder: "ハードウェア", type: "text", class:"products-input-text", id: "product_text"
                   .products-text_box-product_text
                     型番
                     .products-text_box-model_number
-                      = s.text_field :model_number, placeholder: "model_number", type: "text", class:"model_number-input-text", id: "model_number_text"
+                      = s.text_field :model_number, placeholder: "型番", type: "text", class:"model_number-input-text", id: "model_number_text"
+                  .products-text_box-product_text
+                    購入日
+                    .products-text_box-buy
+                      = s.text_field :purchase_date, placeholder: "購入日", type: "text", class:"purchase_date-input-text", id: "purchase_date_text"
                   = icon('far', 'plus-square', id: 'pulas-product')
                   #add_product
 

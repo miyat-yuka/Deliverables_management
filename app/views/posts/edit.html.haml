@@ -95,8 +95,11 @@
                     型番
                     .products-text_box-model_number
                       = s.text_field :model_number, placeholder: "model_number", type: "text", class:"model_number-input-text", id: "model_number_text"
+                  .products-text_box-product_text
+                    購入日
+                    .products-text_box-buy
+                      = s.text_field :purchase_date, placeholder: "購入日", type: "text", class:"purchase_date-input-text", id: "purchase_date_text"
                   = icon('far', 'plus-square', id: 'pulas-product')
-                  -# = icon('far', 'minus-square', id: 'minus-product')
                   #add_product
 
             .footer
