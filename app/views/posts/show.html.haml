@@ -1,5 +1,4 @@
 = render 'partial/search'
-= render 'partial/sidebar'
 .show-main
   %span.show-main_name
     登録情報  一覧
@@ -35,7 +34,8 @@
               納品ソフトウェア：
               = program.software
             .show-main_page_flame-parent-dealer
-              ◯担当ディーラー
+              =icon('fas', 'user-tie')
+              担当ディーラー
               .show-main_page_flame-parent-dealer_box
                 .show-main_page_flame-parent-dealer_company
                   会社名：
@@ -47,7 +47,8 @@
                   担当者（カナ）：
                   = @post.dealer.kananame
             .show-main_page_flame-parent-software-product_box
-              ◯納品物 一覧
+              =icon('fas', 'laptop')
+              納品物 一覧
               - program.products.each do |product|
                 .show-main_page_flame-parent-software-product_box_child
                   .show-main_page_flame-parent-software-product_category
