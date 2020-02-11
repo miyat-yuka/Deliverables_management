@@ -1,12 +1,8 @@
 // new
 
 .best {
-  // height: 100vh;
-  width: calc(100vw - 300px);
-  padding-top: 50px;
+  padding-top: 60px;
   text-align: center;
-  // overflow: scroll;
-  margin: auto 0;
 
   .best-name {
   font-size: x-large;
@@ -15,7 +11,6 @@
   }
 
   .best-software {
-    width: 100%;
     margin-bottom: 50px;
     margin-top: 50px;
 
@@ -26,25 +21,6 @@
     .program-input-text {
       height: 50px;
       width: 500px;
-      font-size: large;
-    }
-  }
-
-  .footer {
-    height: calc(100% - 700px);
-    width: 100%;
-    font-size: large;
-
-    .program_back_botton {
-      height: 50px;
-      width: 100px;
-      font-size: large;
-      margin-right: 200px;
-    }
-
-    .program_botton {
-      height: 50px;
-      width: 100px;
       font-size: large;
     }
   }
