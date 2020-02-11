@@ -1,8 +1,21 @@
 .search-main
-  .search-main-link_box
   = form_tag search_path, method: :get do
     .search-main_box
-      .search-main_box-text
-        = text_field_tag :search, params[:search], class: "text_search", placeholder: "  施設名or施設名（カナ）or住所を入力してください"
-      .search-main_box-button
-        = submit_tag "検索", facility_name: :nil, class: "button_search"
+      .search-main-link_box
+        .search-main-link_box-top_link
+          = link_to root_path do
+            .search-main-link_box-top
+              トップページ
+        .search-main-link_box-post_link
+          = link_to new_post_path do
+            .search-main-link_box-post
+              施設情報登録
+        .search-main-link_box-sign_out_link
+          = link_to destroy_user_session_path, method: :delete do
+            .search-main-link_box-sign_out
+              サインアウト
+      .search-main_box_item
+        .search-main_box-text
+          = text_field_tag :search, params[:search], class: "text_search", placeholder: "  施設名 or 施設名（カナ）or 住所を入力してください"
+        .search-main_box-button
+          = submit_tag "検索", facility_name: :nil, class: "button_search"

@@ -184,12 +184,9 @@
 
 .show-main {
   height: 100vh;
-  width: calc(100% - 300px);
   padding-top: 80px;
   text-align: center;
   overflow: scroll;
-  margin-left: 150px;
-  padding-left: 150px;
 
   .show-main_name {
     font-family: "Courier";
@@ -205,6 +202,10 @@
       width: 1000px;
       background-color: rgb(250, 234, 206);
       margin: 0 auto;
+      color: #5d627b;
+      background-color: rgb(250, 234, 206);
+      border-top: solid 5px rgb(248, 159, 5);
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 
       .show-main_page_flame-details {
         height: 100px;
@@ -286,6 +287,8 @@
 
             .show-main_page_flame-parent-dealer_box {
               background-color: rgb(243, 207, 146);
+              border-radius: 5px;
+              margin-top: 10px;
 
               .show-main_page_flame-parent-dealer_company {
                 padding: 20px;
@@ -304,6 +307,8 @@
 
             .show-main_page_flame-parent-software-product_box_child {
               background-color: rgb(243, 207, 146);
+              border-radius: 5px;
+              margin-top: 10px;
 
               .show-main_page_flame-parent-software-product_category {
                 padding: 20px;
@@ -340,12 +345,9 @@
 
 .index-main {
   height: 100vh;
-  width: calc(100% - 300px);
   padding-top: 80px;
   text-align: center;
   overflow: scroll;
-  margin-left: 150px;
-  padding-left: 150px;
 
   .index-main_name {
     font-family: "Courier";
@@ -360,8 +362,11 @@
     .index-main_page_flame {
       height: 800px;
       width: 1000px;
-      background-color: rgb(250, 234, 206);
       margin: 0 auto;
+      color: #5d627b;
+      background-color: rgb(250, 234, 206);
+      border-top: solid 5px rgb(248, 159, 5);
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 
       .index-main_page_flame-details {
         margin-right: 100px;
@@ -422,12 +427,9 @@
 
 .index-main {
   height: 100vh;
-  width: calc(100% - 300px);
   padding-top: 80px;
   text-align: center;
   overflow: scroll;
-  margin-left: 150px;
-  padding-left: 150px;
 
   .index-main_name {
     font-family: "Courier";
@@ -442,8 +444,11 @@
     .index-main_page_flame {
       height: 800px;
       width: 1000px;
-      background-color: rgb(250, 234, 206);
       margin: 0 auto;
+      color: #5d627b;
+      background-color: rgb(250, 234, 206);
+      border-top: solid 5px rgb(248, 159, 5);
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 
       .index-main_page_flame-details {
         margin-right: 100px;

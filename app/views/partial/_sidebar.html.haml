@@ -1,10 +1,6 @@
 .side
-  .side-search
-    = link_to "検索",""
   .side-sign_out
     = link_to "サインアウト", destroy_user_session_path, method: :delete
-  .side-user_edit
-    = link_to "ユーザー編集",""
   .side-post
     = link_to "施設情報登録", new_post_path
   .side-root
