@@ -24,7 +24,7 @@
     }
 
     .products-text_box-product_text {
-      margin-left: 10px;
+      margin-left: 20px;
       font-family: "Courier";
 
       .products-text_box-product {
@@ -37,7 +37,6 @@
     }
 
     .products-text_box-product_text {
-      margin-left: 20px;
       font-family: "Courier";
 
       .products-text_box-model_number {
@@ -48,6 +47,18 @@
         }
       }
     }
+
+    .products-text_box-product_text {
+      font-family: "Courier";
+
+    .products-text_box-buy {
+      .purchase_date-input-text {
+        height: 50px;
+        width: 500px;
+        font-size: large;
+      }
+    }
+  }
     #pulas-product {
       margin-left: 20px;
       margin-top: 40px;
