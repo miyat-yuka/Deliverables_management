@@ -12,7 +12,7 @@ $(function(){
                   <option value="3">マウス</option>
                   <option value="4">キーボード</option>
                   <option value="5">iPad</option>
-                  <option value="6">ノートPC</option>
+                  <option value="6">ノートPC</option></select>
                   </div>
                   </div>
                   <div class="products-text_box-product_text">
