@@ -1,3 +1,30 @@
+// 変数一覧
+$border_line: 2px solid rgb(255, 190, 93);
+
+// mixin一覧
+@mixin form_name_border() {
+  border-bottom: $border_line;
+  margin-bottom: 30px;
+}
+
+@mixin image_button() {
+  display: block;
+  height: 50px;
+  width: 200px;
+  border: solid 1px;
+  line-height: 50px;
+  border-radius: 10px;
+  color: white;
+  border-color: rgb(20, 189, 195);
+  background-color: rgb(20, 189, 195);
+  box-shadow: inset 0px 2px 0px -2px rgb(3, 116, 116), 0px 2px 2px rgb(3, 116, 116);
+  font-family: "Courier";
+  margin: 0 auto;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+
 // new
 
 .main {
@@ -145,12 +172,19 @@
       margin-top: 100px;
     }
 
+    .label-delivery_note-image {
+      @include image_button ();
+    }
+
     .delivery_note-image {
-      height: 50px;
-      width: 500px;
-      margin-left: 200px;
-      margin-top: 50px;
-      font-size: large;
+      display: none;
+    }
+
+    .main-delivery_note-child_border {
+      width: 600px;
+      border-bottom: $border_line;
+      margin: 0 auto;
+      margin-top: 100px;
     }
   }
 
@@ -164,25 +198,16 @@
       margin-top: 100px;
     }
 
+    .label-estimate_sheet-image {
+      @include image_button ();
+    }
+
     .estimate_sheet-image {
-      height: 50px;
-      width: 500px;
-      margin-left: 200px;
-      margin-top: 50px;
-      font-size: large;
+      display: none;
     }
   }
 }
 
-
-// 変数一覧
-$border_line: 2px solid rgb(255, 190, 93);
-
-// mixin一覧
-@mixin form_name_border() {
-  border-bottom: $border_line;
-  margin-bottom: 30px;
-}
 
 
 // show
@@ -431,5 +456,12 @@ $border_line: 2px solid rgb(255, 190, 93);
   .page {
     height: 200px;
     font-size: x-large;
+
+    .jump_link {
+      display: block;
+      margin-top: 50px;
+      text-decoration: none;
+
+    }
   }
 }
