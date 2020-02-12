@@ -9,11 +9,10 @@ $(function(){
                   <div class="products-text_box-category">
                   <select name="post[programs_attributes][0][products_attributes][${index}][category_id]"><option value="1">デスクトップ</option>
                   <option value="2">モニター</option>
-                  <option value="3">キーボード</option>
-                  <option value="4">マウス</option>
-                  <option value="5">ノートPC</option>
-                  <option value="6">タブレット</option>
-                  <option value="7">iPad</option></select>
+                  <option value="3">マウス</option>
+                  <option value="4">キーボード</option>
+                  <option value="5">iPad</option>
+                  <option value="6">ノートPC</option>
                   </div>
                   </div>
                   <div class="products-text_box-product_text">
