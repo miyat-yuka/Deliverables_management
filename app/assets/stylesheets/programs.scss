@@ -4,17 +4,17 @@
   padding-top: 60px;
   text-align: center;
 
-  .best-name {
+  &-name {
   font-size: x-large;
   font-family: "Courier";
   border-bottom: solid 2px orange;
   }
 
-  .best-software {
+  &-software {
     margin-bottom: 50px;
     margin-top: 50px;
 
-    .best-software-child {
+    &-child {
       font-family: "Courier";
     }
 
@@ -37,18 +37,18 @@
   margin-left: 150px;
   padding-left: 150px;
 
-  .one-name {
+  &-name {
   font-size: x-large;
   font-family: "Courier";
   border-bottom: solid 2px orange;
   }
 
-  .one-software {
+  &-software {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 50px;
 
-    .one-software-child {
+    &-child {
       font-family: "Courier";
       font-size: large;
     }

@@ -1,19 +1,21 @@
+// new
+
 .top {
   padding-top: 50px;
   text-align: center;
   margin: auto 0;
 
-  .top-name {
+  &-name {
     font-family: "Courier";
     font-size: x-large;
     border-bottom: solid 2px orange;
   }
-  .top-dealer {
+  &-dealer {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 50px;
 
-    .top-dealer-child {
+    &-child {
       font-family: "Courier";
     }
 
@@ -30,6 +32,7 @@
           }
         }
       }
+
       .top-dealer-child_box-name_text {
         font-family: "Courier";
         margin-top: 50px;
@@ -43,6 +46,7 @@
           }
         }
       }
+      
       .top-dealer-child_box-kana_text {
         font-family: "Courier";
         margin-top: 50px;
