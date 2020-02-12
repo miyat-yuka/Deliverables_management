@@ -6,24 +6,24 @@
   overflow: scroll;
   margin-bottom: 100px;
 
-  .main-name {
+  &-name {
     font-size: x-large;
     font-family: "Courier";
     border-bottom: solid 2px orange;
     }
 
-  .main-child {
+  &-child {
   font-size: x-large;
   font-family: "Courier";
   border-bottom: solid 2px orange;
   }
 
-  .main-registration__date {
+  &-registration__date {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 50px;
 
-    .main-registration__date-child {
+    &-child {
       font-family: "Courier";
     }
 
@@ -34,12 +34,12 @@
     }
   }
 
-    .main-facility {
+    &-facility {
       width: 100%;
       margin-bottom: 50px;
       margin-top: 50px;
 
-      .main-facility-child {
+      &-child {
         font-family: "Courier";
       }
       
@@ -50,7 +50,7 @@
       }
     }
 
-    .main-kana {
+    &-kana {
       width: 100%;
       margin-bottom: 50px;
       margin-top: 50px;
@@ -60,7 +60,7 @@
         width: 100px;
       }
   
-      .main-kana-child {
+      &-child {
         font-family: "Courier";
       }
   
@@ -71,12 +71,12 @@
       }
     }
 
-    .main-postal__code {
+    &-postal__code {
       width: 100%;
       margin-bottom: 50px;
       margin-top: 50px;
   
-      .main-postal__code-child {
+      &-child {
         font-family: "Courier";
       }
   
@@ -87,12 +87,12 @@
       }
     }
 
-  .main-address {
+  &-address {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 50px;
 
-    .main-address-child {
+    &-child {
       font-family: "Courier";
     }
 
@@ -103,12 +103,12 @@
     }
   }
 
-  .main-tell {
+  &-tell {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 50px;
 
-    .main-tell-child {
+    &-child {
       font-family: "Courier";
     }
 
@@ -119,12 +119,12 @@
     }
   }
 
-  .main-delivery_date {
+  &-delivery_date {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 50px;
 
-    .main-delivery_date-child  {
+    &-child  {
       font-family: "Courier";
     }
 
@@ -135,13 +135,14 @@
     }
   }
 
-  .main-delivery_note {
+  &-delivery_note {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 50px;
 
-    .main-delivery_note-child  {
+    &-child  {
       font-family: "Courier";
+      margin-top: 100px;
     }
 
     .delivery_note-image {
@@ -153,13 +154,14 @@
     }
   }
 
-  .main-estimate_sheet {
+  &-estimate_sheet {
     width: 100%;
     margin-bottom: 50px;
     margin-top: 50px;
 
-    .main-estimate_sheet-child {
+    &-child {
       font-family: "Courier";
+      margin-top: 100px;
     }
 
     .estimate_sheet-image {
@@ -173,6 +175,14 @@
 }
 
 
+// 変数一覧
+$border_line: 2px solid rgb(255, 190, 93);
+
+// mixin一覧
+@mixin form_name_border() {
+  border-bottom: $border_line;
+  margin-bottom: 30px;
+}
 
 
 // show
@@ -183,22 +193,21 @@
 }
 
 .show-main {
-  height: 100vh;
   padding-top: 80px;
   text-align: center;
   overflow: scroll;
 
-  .show-main_name {
+  &_name {
     font-family: "Courier";
     font-size: x-large;
     border-bottom: solid 2px orange;
   }
-  .show-main_page {
+  &_page {
     margin-top: 100px;
     font-size: x-large;
     
 
-    .show-main_page_flame {
+    &_flame {
       width: 1000px;
       background-color: rgb(250, 234, 206);
       margin: 0 auto;
@@ -207,34 +216,36 @@
       border-top: solid 5px rgb(248, 159, 5);
       box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 
-      .show-main_page_flame-details {
+      &-details {
         height: 100px;
         width: 100%;
         position: relative;
 
-        .show-main_page_flame-details-item {
+        &-item {
           width: 260px;
           position: absolute;
           right: 50px;
           top: 70px;
-          border-bottom: 2px solid rgb(16, 83, 230);
           
           .show-main_text_destroy {
             margin-right: 30px;
             text-decoration: none;
+            color: rgb(34, 118, 243);
           }
 
           .show-main_text_back {
             margin-right: 30px;
             text-decoration: none;
+            color: rgb(34, 118, 243);
           }
           .show-main_text_edit {
             text-decoration: none;
+            color: rgb(34, 118, 243);
           }
         }
       }
 
-      .show-main_page_flame-parent {
+      &-parent {
         width: 800px;
         margin-left: 100px;
         padding-bottom: 100px;
@@ -244,92 +255,88 @@
         flex-direction: column;
         font-family: "Courier";
 
-        .show-main_page_flame-parent-name {
-          border-bottom: 2px solid rgb(255, 190, 93);
-          margin-bottom: 30px;
+        &-name {
+          @include form_name_border();
         }
 
-        .show-main_page_flame-parent-kananame {
-          border-bottom: 2px solid rgb(255, 190, 93);
-          margin-bottom: 30px;
+        &-kananame {
+          @include form_name_border();
         }
 
-        .show-main_page_flame-parent-postal_code {
-          border-bottom: 2px solid rgb(255, 190, 93);
-          margin-bottom: 30px;
+        &-postal_code {
+          @include form_name_border();
         }
 
-        .show-main_page_flame-parent-address {
-          border-bottom: 2px solid rgb(255, 190, 93);
-          margin-bottom: 30px;
+        &-address {
+          @include form_name_border();
         }
 
-        .show-main_page_flame-parent-tell {
-          border-bottom: 2px solid rgb(255, 190, 93);
-          margin-bottom: 30px;
+        &-tell {
+          @include form_name_border();
         }
 
-        .show-main_page_flame-parent-delivery_date {
-          border-bottom: 2px solid rgb(255, 190, 93);
+        &-delivery_date {
+          border-bottom: $border_line;
           margin-bottom: 100px;
         }
 
-        .show-main_page_flame-parent-box {
-
-          .show-main_page_flame-parent-software {
+        &-box {
+          
+          &-software {
             border-bottom: 2px solid rgb(255, 190, 93);
             margin-bottom: 30px;
             text-align: left;
           }
-          .show-main_page_flame-parent-dealer {
+          .show-main_page_flame-parent-box-dealer {
             text-align: left;
             margin-bottom: 50px;
 
-            .show-main_page_flame-parent-dealer_box {
+            .show-main_page_flame-parent-box-dealer_box {
               background-color: rgb(243, 207, 146);
               border-radius: 5px;
               margin-top: 10px;
 
-              .show-main_page_flame-parent-dealer_company {
+              .show-main_page_flame-parent-box-dealer_company {
                 padding: 20px;
               }
-              .show-main_page_flame-parent-dealer_name {
+              .show-main_page_flame-parent-box-dealer_name {
                 padding: 20px;
               }
-              .show-main_page_flame-parent-dealer_kananame {
+              .show-main_page_flame-parent-box-dealer_kananame {
                 padding: 20px;
               }
             }
           }
-          .show-main_page_flame-parent-software-product_box {
+
+          &-software-product_box {
             text-align: left;
             margin-bottom: 100px;
 
-            .show-main_page_flame-parent-software-product_box_child {
+            .show-main_page_flame-parent-box-software-product_box_child {
               background-color: rgb(243, 207, 146);
               border-radius: 5px;
               margin-top: 10px;
 
-              .show-main_page_flame-parent-software-product_category {
+              .show-main_page_flame-parent-box-software-product_category {
                 padding: 20px;
               }
-              .show-main_page_flame-parent-software-product_thing {
+              .show-main_page_flame-parent-box-software-product_thing {
                 padding: 20px;
               }
-              .show-main_page_flame-parent-software-product_model_number {
+              .show-main_page_flame-parent-box-software-product_model_number {
                 padding: 20px;
               }
-              .show-main_page_flame-parent-software-product_purchase_date {
+              .show-main_page_flame-parent-box-software-product_purchase_date {
                 padding: 20px;
                 margin-bottom: 10px;
               }
             }
           }
         }
-        .show-main_page_flame-parent-estimate_sheet {
+        .show-main_page_flame-parent-box-estimate_sheet {
           margin-bottom: 100px;
         }
-        .show-main_page_flame-parent-delivery_note {
+        .show-main_page_flame-parent-box-delivery_note {
           margin-bottom: 100px;
         }
       }
@@ -341,28 +348,24 @@
 }
 
 
-
-
-
-// index
+// index,search
 
 .index-main {
-  height: 100vh;
   padding-top: 80px;
   text-align: center;
   overflow: scroll;
 
-  .index-main_name {
+  &_name {
     font-family: "Courier";
     font-size: x-large;
     border-bottom: solid 2px orange;
   }
-  .index-main_page {
+  &_page {
     margin-top: 100px;
     font-size: x-large;
     
 
-    .index-main_page_flame {
+    &_flame {
       height: 800px;
       width: 1000px;
       margin: 0 auto;
@@ -371,13 +374,18 @@
       border-top: solid 5px rgb(248, 159, 5);
       box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 
-      .index-main_page_flame-details {
+      &-details {
         margin-right: 100px;
         padding-top: 100px;
         text-align: right;
+
+        .index-main_text_name {
+          text-decoration: none;
+          color: rgb(34, 118, 243);
+        }
       }
 
-      .index-main_page_flame-parent {
+      &-parent {
         height: 550px;
         width: 800px;
         margin-left: 100px;
@@ -387,32 +395,32 @@
         flex-direction: column;
         font-family: "Courier";
 
-        .index-main_page_flame-parent-name {
-          border-bottom: 2px solid rgb(255, 190, 93);
+        &-name {
+          border-bottom: $border_line;
         }
 
-        .index-main_page_flame-parent-kananame {
-          border-bottom: 2px solid rgb(255, 190, 93);
+        &-kananame {
+          border-bottom: $border_line;
         }
 
-        .index-main_page_flame-parent-postal_code {
-          border-bottom: 2px solid rgb(255, 190, 93);
+        &-postal_code {
+          border-bottom: $border_line;
         }
 
-        .index-main_page_flame-parent-address {
-          border-bottom: 2px solid rgb(255, 190, 93);
+        &-address {
+          border-bottom: $border_line;
         }
 
-        .index-main_page_flame-parent-tell {
-          border-bottom: 2px solid rgb(255, 190, 93);
+        &-tell {
+          border-bottom: $border_line;
         }
 
-        .index-main_page_flame-parent-delivery_date {
-          border-bottom: 2px solid rgb(255, 190, 93);
+        &-delivery_date {
+          border-bottom: $border_line;
         }
 
-        .index-main_page_flame-parent-software {
-          border-bottom: 2px solid rgb(255, 190, 93);
+        &-software {
+          border-bottom: $border_line;
         }
       }
     }
@@ -423,87 +431,5 @@
   .page {
     height: 200px;
     font-size: x-large;
-  }
-}
-
-
-
-
-
-// search
-
-.index-main {
-  height: 100vh;
-  padding-top: 80px;
-  text-align: center;
-  overflow: scroll;
-
-  .index-main_name {
-    font-family: "Courier";
-    font-size: x-large;
-    border-bottom: solid 2px orange;
-  }
-  .index-main_page {
-    margin-top: 100px;
-    font-size: x-large;
-    
-
-    .index-main_page_flame {
-      height: 800px;
-      width: 1000px;
-      margin: 0 auto;
-      color: #5d627b;
-      background-color: rgb(250, 234, 206);
-      border-top: solid 5px rgb(248, 159, 5);
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-
-      .index-main_page_flame-details {
-        margin-right: 100px;
-        padding-top: 100px;
-        text-align: right;
-      }
-
-      .index-main_page_flame-parent {
-        height: 550px;
-        width: 800px;
-        margin-left: 100px;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        flex-direction: column;
-        font-family: "Courier";
-
-        .index-main_page_flame-parent-name {
-          border-bottom: 2px solid rgb(255, 190, 93);
-        }
-
-        .index-main_page_flame-parent-kananame {
-          border-bottom: 2px solid rgb(255, 190, 93);
-        }
-
-        .index-main_page_flame-parent-postal_code {
-          border-bottom: 2px solid rgb(255, 190, 93);
-        }
-
-        .index-main_page_flame-parent-address {
-          border-bottom: 2px solid rgb(255, 190, 93);
-        }
-
-        .index-main_page_flame-parent-tell {
-          border-bottom: 2px solid rgb(255, 190, 93);
-        }
-
-        .index-main_page_flame-parent-delivery_date {
-          border-bottom: 2px solid rgb(255, 190, 93);
-        }
-
-        .index-main_page_flame-parent-software {
-          border-bottom: 2px solid rgb(255, 190, 93);
-        }
-      }
-    }
-    .footer {
-      height: 200px;
-    }
   }
 }

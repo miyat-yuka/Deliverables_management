@@ -1,7 +1,7 @@
 = render 'partial/search'
 .show-main
   %span.show-main_name
-    登録情報  一覧
+    詳細情報
   .show-main_page
     .show-main_page_flame
       .show-main_page_flame-details
@@ -30,43 +30,45 @@
           = @post.delivery_date
         .show-main_page_flame-parent-box
           - @post.programs.each do |program|
-            .show-main_page_flame-parent-software
+            .show-main_page_flame-parent-box-software
               納品ソフトウェア：
               = program.software
-            .show-main_page_flame-parent-dealer
+            .show-main_page_flame-parent-box-dealer
               =icon('fas', 'user-tie')
               担当ディーラー
-              .show-main_page_flame-parent-dealer_box
-                .show-main_page_flame-parent-dealer_company
+              .show-main_page_flame-parent-box-dealer_box
+                .show-main_page_flame-parent-box-dealer_company
                   会社名：
                   = @post.dealer.company.name
-                .show-main_page_flame-parent-dealer_name
+                .show-main_page_flame-parent-box-dealer_name
                   担当者：
                   = @post.dealer.name
-                .show-main_page_flame-parent-dealer_kananame
+                .show-main_page_flame-parent-box-dealer_kananame
                   担当者（カナ）：
                   = @post.dealer.kananame
-            .show-main_page_flame-parent-software-product_box
+            .show-main_page_flame-parent-box-software-product_box
               =icon('fas', 'laptop')
               納品物 一覧
               - program.products.each do |product|
-                .show-main_page_flame-parent-software-product_box_child
-                  .show-main_page_flame-parent-software-product_category
+                .show-main_page_flame-parent-box-software-product_box_child
+                  .show-main_page_flame-parent-box-software-product_category
                     カテゴリー：
                     = product.category.name
-                  .show-main_page_flame-parent-software-product_thing
+                  .show-main_page_flame-parent-box-software-product_thing
                     ハードウェア：
                     = product.thing
-                  .show-main_page_flame-parent-software-product_model_number
+                  .show-main_page_flame-parent-box-software-product_model_number
                     型番：
                     = product.model_number
-                  .show-main_page_flame-parent-software-product_purchase_date
+                  .show-main_page_flame-parent-box-software-product_purchase_date
                     購入日：
                     = product.purchase_date
-        .show-main_page_flame-parent-estimate_sheet
-          見積書：
-          = image_tag "#{@post.estimate_sheet}"
-        .show-main_page_flame-parent-delivery_note
-          納品書：
-          = image_tag "#{@post.delivery_note}"
+        .show-main_page_flame-parent-box-estimate_sheet
+          見積書
+          .show-main_page_flame-parent-box-estimate_sheet_image
+            = image_tag "#{@post.estimate_sheet}"
+        .show-main_page_flame-parent-box-delivery_note
+          納品書
+          .show-main_page_flame-parent-box-delivery_note-image
+            = image_tag "#{@post.delivery_note}"
     .footer

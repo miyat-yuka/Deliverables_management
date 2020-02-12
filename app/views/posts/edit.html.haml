@@ -1,4 +1,4 @@
-= render 'partial/sidebar'
+= render 'partial/search'
 .main
   %span.main-child
     施設情報を登録してください
@@ -40,14 +40,16 @@
 
       .main-delivery_note
         .main-delivery_note-child
-          納品書
-        = image_tag "#{@post.delivery_note}"
+          登録済の納品書
+          .main-delivery_note-child-image
+            = image_tag "#{@post.delivery_note}"
         = f.file_field :delivery_note, class: "delivery_note-image"
 
       .main-estimate_sheet
         .main-estimate_sheet-child
-          見積書
-        = image_tag "#{@post.estimate_sheet}"
+          登録済の見積書
+          .main-estimate_sheet-child-image
+            = image_tag "#{@post.estimate_sheet}"
         = f.file_field :estimate_sheet, class: "estimate_sheet-image"
 
       .top
@@ -102,5 +104,5 @@
                   = icon('far', 'plus-square', id: 'pulas-product')
                   #add_product
 
-            .footer
-              = f.submit "更新", class:"products_button"
+            .footer_product
+              = f.submit "更新", class:"product_button"

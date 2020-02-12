@@ -3,13 +3,13 @@
 .products {
   padding-top: 80px;
 
-  .products-text_box {
+  &-text_box {
     display: flex;
     flex-wrap:wrap;
     width: 600px;
     margin: 0 auto;
 
-    .products-text_box-category_text {
+    &-category_text {
       font-family: "Courier";
       margin-top: 50px;
 
@@ -23,7 +23,7 @@
       }
     }
 
-    .products-text_box-product_text {
+    &-product_text {
       margin-left: 20px;
       font-family: "Courier";
 
@@ -36,7 +36,7 @@
       }
     }
 
-    .products-text_box-product_text {
+    &-product_text {
       font-family: "Courier";
 
       .products-text_box-model_number {
@@ -48,7 +48,7 @@
       }
     }
 
-    .products-text_box-product_text {
+    &-product_text {
       font-family: "Courier";
 
     .products-text_box-buy {
@@ -59,6 +59,7 @@
       }
     }
   }
+
     #pulas-product {
       margin-left: 20px;
       margin-top: 40px;
@@ -79,56 +80,5 @@
     padding: 30px;
     font-size: large;
     margin-top: 100px;
-  }
-}
-
-// index
-
-.product {
-  height: 100vh;
-  width: calc(100% - 300px);
-  padding-top: 80px;
-  text-align: center;
-  // overflow: scroll;
-  margin-left: 150px;
-  padding-left: 150px;
-
-  .product-name {
-  font-size: x-large;
-  font-family: "Courier";
-  border-bottom: solid 2px orange;
-  }
-
-  .product-main {
-    width: 100%;
-    margin-bottom: 50px;
-    margin-top: 50px;
-
-    .product-main-child {
-      font-family: "Courier";
-      font-size: large;
-    }
-    .text-field {
-      height: 50px;
-      width: 500px;
-      font-family: "Courier";
-      border: solid;
-      border-color: rgb(37, 59, 156);
-      margin: 5px auto;
-      padding: 5px;
-
-      .product-input-text {
-        height: 50px;
-        width: 500px;
-        margin-top: 15px;
-        font-size: large;
-      }
-    }
-  }
-
-  .footer {
-    height: calc(100% - 700px);
-    width: 100%;
-    font-size: large;
   }
 }
