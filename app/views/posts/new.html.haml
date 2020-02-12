@@ -41,12 +41,18 @@
       .main-delivery_note
         .main-delivery_note-child
           納品書
+        = f.label :delivery_note, class: "label-delivery_note-image" do
+          画像ファイルを選択
+          = icon('fas', 'image')
         = f.file_field :delivery_note, class: "delivery_note-image"
 
       .main-estimate_sheet
         .main-estimate_sheet-child
           見積書
-        = f.file_field :estimate_sheet, class: "estimate_sheet-image"
+        = f.label :estimate_sheet, class: "label-estimate_sheet-image" do
+          画像ファイルを選択
+          = icon('fas', 'image')
+          = f.file_field :estimate_sheet, class: "estimate_sheet-image"
 
       .top
         %span.top-name

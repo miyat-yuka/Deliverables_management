@@ -43,14 +43,21 @@
           登録済の納品書
           .main-delivery_note-child-image
             = image_tag "#{@post.delivery_note}"
-        = f.file_field :delivery_note, class: "delivery_note-image"
+        = f.label :delivery_note, class: "label-delivery_note-image" do
+          画像ファイルを選択
+          = icon('fas', 'image')
+          = f.file_field :delivery_note, class: "delivery_note-image"
+        .main-delivery_note-child_border
 
       .main-estimate_sheet
         .main-estimate_sheet-child
           登録済の見積書
           .main-estimate_sheet-child-image
             = image_tag "#{@post.estimate_sheet}"
-        = f.file_field :estimate_sheet, class: "estimate_sheet-image"
+        = f.label :estimate_sheet, class: "label-estimate_sheet-image" do
+          画像ファイルを選択
+          = icon('fas', 'image')
+          = f.file_field :estimate_sheet, class: "estimate_sheet-image"
 
       .top
         %span.top-name
