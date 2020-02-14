@@ -33,9 +33,6 @@ Things you may want to cover:
 |password|string|null: false|
 ### Association
 - has_many :posts
-- has_many :programs
-- has_many :hards
-- has_many :products
 
 ## postsテーブル
 |Column|Type|Options|
@@ -48,35 +45,49 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :programs
+- has_one :dealer
+
+## dealersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|kananame|string|null: false|
+|post_id|references|null: false|
+|company_id|references|null: false|
+### Association
+- belongs_to :post
+- belongs_to :company
 
 ## programsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|software_name|string|
-|user_id|references|null: false|
+|software|string|null: false|
 |post_id|references|null: false|
 ### Association
-- belongs_to :user
 - belongs_to :post
-- has_many :hards
-
-## hardsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category|string|null: false|
-|user_id|references|null: false|
-|software_id|references|null: false|
-### Association
-- belongs_to :user
-- belongs_to :program
 - has_many :products
 
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |thing|string|null: false|
-|user_id|references|null: false|
-|hard_id|references|null: false|
+|model_number|string|null: false|
+|category_id|references|null: false|
+|program_id|references|null: false|
 ### Association
-- belongs_to :user
-- belongs_to :hard
+- belongs_to :program
+- belongs_to :category
+
+## companiesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|
+### Association
+- has_many :dealers
+
+## categoriesテーブル
+|Colmun|Type|Options|
+|------|----|-------|
+|name|string|
+### Association
+- has_many :products
