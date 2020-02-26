@@ -92,3 +92,5 @@ gem 'mini_magick'
 gem 'kaminari'
 
 gem 'fog-aws'
+
+gem 'nokogiri', ">= 1.10.8"
